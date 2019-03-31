@@ -1,7 +1,8 @@
 CC='gcc'
 CFLAGS='-pthread'
 
-all: dining_philosophers readers_writers producers_consumers sleeping_barber
+all: dining_philosophers readers_writers producers_consumers sleeping_barber \
+     cigarette_smokers
 
 dining_philosophers: dining_philosophers.c
 	$(CC) $(CFLAGS) dining_philosophers.c -o dining_philosophers
@@ -14,6 +15,9 @@ producers_consumers: producers_consumers.c
 
 sleeping_barber: sleeping_barber.c
 	$(CC) $(CFLAGS) sleeping_barber.c -o sleeping_barber
+
+cigarette_smokers: cigarette_smokers.c
+	$(CC) $(CFLAGS) cigarette_smokers.c -o cigarette_smokers
 
 clean:
 	@if test -n "$(wildcard dining_philosophers)"; then \
@@ -32,4 +36,7 @@ clean:
 		rm sleeping_barber; \
 		echo 'removed sleeping_barber'; \
 	fi
-
+	@if test -n "$(wildcard cigarette_smokers)"; then \
+		rm cigarette_smokers; \
+		echo 'removed cigarette_smokers'; \
+	fi
