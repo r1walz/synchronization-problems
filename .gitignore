@@ -35,6 +35,11 @@
 *.i*86
 *.x86_64
 *.hex
+dining_philosophers
+readers_writers
+producers_consumers
+cigarette_smokers
+sleeping_barber
 
 # Debug files
 *.dSYM/
